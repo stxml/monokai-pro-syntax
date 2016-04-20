@@ -1,0 +1,164 @@
+@import "syntax-variables";
+
+atom-text-editor, :host {
+  background-color: @syntax-background-color;
+  color: @syntax-text-color;
+
+  .wrap-guide {
+    background-color: @syntax-wrap-guide-color;
+  }
+
+  .indent-guide {
+    color: @syntax-indent-guide-color;
+  }
+
+  .invisible-character {
+    color: @syntax-invisible-character-color;
+  }
+
+  .gutter {
+    background-color: @syntax-gutter-background-color;
+    color: @syntax-gutter-text-color;
+    border-right: 2px solid #424242;
+
+    .line-number {
+
+      &.cursor-line {
+        background-color: @syntax-gutter-background-color-selected;
+        color: @syntax-gutter-text-color-selected;
+      }
+
+      &.cursor-line-no-selection {
+        color: @syntax-gutter-text-color-selected;
+      }
+    }
+  }
+
+  .scroll-view {
+    padding-left: 2px;
+  }
+
+  .gutter .line-number.folded,
+  .gutter .line-number:after,
+  .fold-marker:after {
+    color: @light-gray;
+  }
+
+  .invisible {
+    color: @syntax-text-color;
+  }
+
+  .cursor {
+    color: @syntax-cursor-color;
+  }
+
+  .selection .region {
+    background-color: @syntax-selection-color;
+  }
+}
+
+atom-text-editor .search-results .marker .region,
+:host .search-results .marker .region {
+  background-color: transparent;
+  border: 1px solid @syntax-result-marker-color;
+}
+
+atom-text-editor .search-results .marker.current-result .region,
+:host .search-results .marker.current-result .region {
+  border: 1px solid @syntax-result-marker-color-selected;
+}
+
+.comment {
+  color: @comment;
+}
+
+.string {
+  color: @string;
+}
+
+.constant.numeric {
+  color: @const;
+}
+
+.constant.language {
+  color: @const;
+}
+
+.constant.character,
+.constant.other {
+  color: @const;
+}
+
+.variable {
+}
+
+.keyword {
+  color: @keyword;
+}
+
+.storage {
+  color: @storage;
+}
+
+.storage.type {
+  font-style: italic;
+  color: @blue;
+}
+
+.entity.name.class {
+  text-decoration: underline;
+  color: @class;
+}
+
+.entity.other.inherited-class {
+  font-style: italic;
+  text-decoration: underline;
+  color: @class;
+}
+
+.entity.name.function {
+  color: @function;
+}
+
+.variable.parameter {
+  font-style: italic;
+  color: @parameter;
+}
+
+.entity.name.tag {
+  color: @tag;
+}
+
+.entity.other.attribute-name {
+  color: @attribute;
+}
+
+.support.function {
+  color: @blue;
+}
+
+.support.constant {
+  color: @blue;
+}
+
+.support.type,
+.support.class {
+  font-style: italic;
+  color: @blue;
+}
+
+.invalid {
+  color: @invalid;
+  background-color: @invalid-bg;
+}
+
+.invalid.deprecated {
+  color: @invalid;
+  background-color: @const;
+}
+
+
+atom-text-editor[mini] .scroll-view,
+:host([mini]) .scroll-view {
+  padding-left: 1px;
+}
